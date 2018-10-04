@@ -61,11 +61,11 @@ def actionps(sw):
         if ("2/0/1" in rawout):
             print(sw + " have atleast 2 switches")
     #as said eailer everything fails including your network and my code
-    except Exeption as e:
+    except Exception as e:
         print(str(e))
 
 #ask infoblox.example.com's dns server for everything in the sw.example.com internal view
-r = requests.get('https://infoblox.example.com/wapi/v2.1/record:a?_max_results=50000&amp;zone=sw.example.com&amp;view=Internal',auth=(username,password),verify=False)
+r = requests.get('https://infoblox.example.com/wapi/v2.1/record:a?_max_results=50000&zone=sw.example.com&view=Internal',auth=(username,password),verify=False)
 
 #store the json
 output = r.json()
